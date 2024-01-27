@@ -4,7 +4,8 @@
   "info": {
     "singularName": "task",
     "pluralName": "tasks",
-    "displayName": "task"
+    "displayName": "task",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,11 @@
       ],
       "default": "pending",
       "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }
