@@ -10,8 +10,8 @@ services:
       - MYSQL_DATABASE=example
       - TZ=Asia/Bangkok
     volumes:
-      - ./tmp/mysql-data:/var/lib/mysql
-      - ./db:/docker-entrypoint-initdb.d
+      - ./resources/tmp/mysql-data:/var/lib/mysql
+      - ./resources/db:/docker-entrypoint-initdb.d
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -22,6 +22,7 @@ services:
 
   admin:
     container_name: test.eveye.com
+    env_file: .env.example
     build:
       context: ./admin
       dockerfile: Dockerfile
